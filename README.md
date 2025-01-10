@@ -1,6 +1,18 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Purpose is to login to application using an authorization server and DPoP
+In authorized area each request is sent via dpop jwt next to access token
+
+## Deploy an Authorization server
+In tests Keycloak is used.While spinning up don't forget to add dpop ```KC_FEATURES: dpop```.
+### Create a realm, and a public client 
+#### Client Configuration under advanced tab:
+1. Token endpoint auth signature algorithm: RS256
+2. Access token signature algorithm: RS256
+3. Proof Key for Code Exchange Code Challenge Method: S256
+4. DPoP Bound Access Tokens: ON
+
 
 ## Available Scripts
 
